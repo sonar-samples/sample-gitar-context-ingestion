@@ -1,6 +1,6 @@
 # Gitar context ingestion sample
 
-This Flask application is the companion repository for the Gitar context ingestion blueprint. The blueprint is the primary learning resource.
+This runnable Flask sample supports the Gitar context ingestion blueprint. The blueprint is the primary learning resource.
 
 The application uses a Flask app factory and separate blueprints for its health check and order lifecycle API. The order creation, lookup, and cancellation routes contain intentional error-handling bugs, while the tests cover the happy path so readers can reproduce the blueprint's code review examples.
 
