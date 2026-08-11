@@ -1,18 +1,20 @@
-# Sonar samples repository template
+# Gitar context ingestion sample
 
-Private starting point for a Sonar sample, workshop, or article-backed blueprint repository.
+This Flask application is the companion repository for the Gitar context ingestion blueprint. The blueprint is the primary learning resource.
 
-<!-- Internal maintainer: replace this README with the derived repository's title, purpose, prerequisites, runnable steps, and demonstrated behavior before its first push. Remove this comment before push. -->
+The application uses a Flask app factory and separate blueprints for its health check and order lifecycle API. The order creation, lookup, and cancellation routes contain intentional error-handling bugs, while the tests cover the happy path so readers can reproduce the blueprint's code review examples.
 
 ## Prerequisites
 
-- Access to create a private repository in the `sonar-samples` organization
-- Git
+- Python 3.13 or later
+- Flask, installed through `requirements.txt`
 
-## How to run
+## Run locally
 
-Use GitHub's **Use this template** action to create a private repository, then clone the new repository locally before adding its runnable code and documentation.
-
-## What this demonstrates
-
-The template provides a polyglot `.gitignore`, an optional `SONAR_TOKEN` configuration file, and a SonarQube Cloud workflow that runs only when the repository explicitly opts in.
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --requirement requirements.txt
+python -m pytest --quiet
+flask --app 'app:create_app()' run
+```
